@@ -16,13 +16,13 @@ class _WishLsitState extends State<WishLsit> {
   WishListProvider wishListProvider;
   showAlertDialog(BuildContext context, ProductModel delete) {
     // set up the buttons
-    Widget cancelButton = FlatButton(
+    Widget cancelButton = MaterialButton(
       child: Text("No"),
       onPressed: () {
         Navigator.of(context).pop();
       },
     );
-    Widget continueButton = FlatButton(
+    Widget continueButton = MaterialButton(
       child: Text("Yes"),
       onPressed: () {
         wishListProvider.deleteWishtList(delete.productId);
@@ -77,7 +77,7 @@ class _WishLsitState extends State<WishLsit> {
                 productId: data.productId,
                 productQuantity: data.productQuantity,
                 onDelete: () {
-                  showAlertDialog(context,data);
+                  showAlertDialog(context, data);
                 },
               ),
             ],

@@ -11,13 +11,13 @@ class ReviewCart extends StatelessWidget {
   ReviewCartProvider reviewCartProvider;
   showAlertDialog(BuildContext context, ReviewCartModel delete) {
     // set up the buttons
-    Widget cancelButton = FlatButton(
+    Widget cancelButton = MaterialButton(
       child: Text("No"),
       onPressed: () {
         Navigator.of(context).pop();
       },
     );
-    Widget continueButton = FlatButton(
+    Widget continueButton = MaterialButton(
       child: Text("Yes"),
       onPressed: () {
         reviewCartProvider.reviewCartDataDelete(delete.cartId);
@@ -68,7 +68,7 @@ class ReviewCart extends StatelessWidget {
               ),
             ),
             onPressed: () {
-              if(reviewCartProvider.getReviewCartDataList.isEmpty){
+              if (reviewCartProvider.getReviewCartDataList.isEmpty) {
                 return Fluttertoast.showToast(msg: "No Cart Data Found");
               }
               Navigator.of(context).push(
